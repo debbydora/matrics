@@ -8,9 +8,7 @@ const LoginProvider = (props) => {
     password: "",
   });
 
-  useEffect(() => {
-    getCompanyDetails();
-  }, []);
+  useEffect(() => {}, []);
   const url = "https://demoapi.remis.africa/Login";
 
   const navigate = useNavigate();
@@ -30,12 +28,12 @@ const LoginProvider = (props) => {
         password: user.password,
       })
       .then((res) => {
-        console.log(res);
         if (res.status === 200) {
           localStorage.setItem("token", res.data.token);
           localStorage.setItem("companyId", res.data.country.id);
           localStorage.setItem("userId", res.data.userId);
           localStorage.setItem("active", res.data.isActive);
+          getCompanyDetails();
           navigate("/");
         }
       })

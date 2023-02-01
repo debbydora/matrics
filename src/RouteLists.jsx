@@ -8,8 +8,8 @@ import Company from "./pages/Company/Company";
 const RouteLists = [
   {
     path: "/",
-    element: <Dashboard />,
-    // element: <Protected children={<Dashboard />} />,
+    // element: <Dashboard />,
+    element: <Protected children={<Dashboard />} />,
   },
   {
     path: "login",
@@ -17,15 +17,18 @@ const RouteLists = [
   },
   {
     path: "addDriver",
-    element: <AddDriver />,
+    // element: <AddDriver />,
+    element: <Protected children={<AddDriver />} />,
   },
   {
     path: "company",
-    element: <Company />,
+    // element: <Company />,
+    element: <Protected children={<Company />} />,
   },
   {
     path: "staff",
-    element: <Staff />,
+    // element: <Staff />,
+    element: <Protected children={<Staff />} />,
   },
 ];
 export default RouteLists;

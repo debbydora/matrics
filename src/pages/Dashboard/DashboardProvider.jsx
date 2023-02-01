@@ -1,7 +1,8 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const DashboardProvider = (props) => {
+  const [dashboard, setDashboard] = useState(null);
   useEffect(() => {
     getOverview();
   }, []);
@@ -12,15 +13,20 @@ const DashboardProvider = (props) => {
         "Accept": "application/json; charset=UTF-8",
       };
     axios
-      .get("https://demoapi.remis.africa/Dashboard/CompanyOverview", {
+      .get("https://demoapi.remis.africa/dashboard", {
         headers,
       })
 
-      .then((res) => console.log(res))
+      .then((res) => {
+        setDashboard(res?.data?.data?.dashboard);
+        console.log(res);
+      })
       .catch((err) => console.log(err));
   };
 
-  return props.render({});
+  return props.render({
+    dashboard,
+  });
 };
 
 export default DashboardProvider;

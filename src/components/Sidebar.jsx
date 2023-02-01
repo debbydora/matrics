@@ -27,6 +27,13 @@ const Sidebar = () => {
   const pageNavigate = (item) => {
     navigate(item.location);
   };
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("companyId");
+    localStorage.removeItem("userId");
+    navigate("/login");
+  };
   return (
     <>
       <div
@@ -66,7 +73,7 @@ const Sidebar = () => {
           })}
           {/* signoutIcon */}
           <div className="menuItem">
-            <UilSignOutAlt />
+            <UilSignOutAlt onClick={logout} />
           </div>
         </div>
       </motion.div>
