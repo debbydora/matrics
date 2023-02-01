@@ -1,0 +1,91 @@
+.App {
+  color: var(--black);
+  background: linear-gradient(
+    106.37deg,
+    #ffe1bc 29.63%,
+    #ffcfd1 51.55%,
+    #f3c6f1 90.85%
+  );
+  height: 100vh;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  font-family: "Inter", sans-serif;
+}
+
+.Updates {
+  width: 100% !important;
+  background: white;
+  height: 400px;
+  border-radius: 0.7rem;
+  padding: 1rem 3rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  align-items: center;
+}
+
+.update {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.update > img {
+  width: 5rem;
+  height: 5rem;
+}
+.details__box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100% !important;
+  font-size: 1.4rem;
+}
+.details__box > div {
+  display: flex;
+  justify-content: space-between;
+}
+.details__box > div > span:nth-of-type(1) {
+  font-weight: bold;
+  margin-right: 3rem;
+}
+.noti {
+  display: block;
+  gap: 20px !important;
+}
+.noti > div > span:nth-of-type(1) {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.RightSide {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.company__title {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .RightSide {
+    justify-content: flex-start;
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .RightSide {
+    width: 100%;
+    margin-top: 0;
+  }
+  .RightSide > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
